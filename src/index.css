@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme */
+.light {
+  --bg: #ffffff;
+  --text: #0a0f1a;
+  --muted: #4b5563;
+}
+
+/* Dark Theme */
+.dark {
+  --bg: #0a0f1a;
+  --text: #ffffff;
+  --muted: #9ca3af;
+}
+
+/* Apply globally */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
