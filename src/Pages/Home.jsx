@@ -30,9 +30,9 @@ import { noticesData } from "../utils/noticesData";
 
 /* ===== Data ===== */
 const galleryImages = [
-  "https://i.ibb.co.com/M457FTD/00.jpg",
-  "https://i.ibb.co.com/5hZjzr9w/04.jpg",
-  "https://i.ibb.co.com/sJM8ygRn/09.jpg",
+  "https://i.ibb.co.com/Y4WcMFpC/Whats-App-Image-2026-07-05-at-11-55-30-AM.jpg",
+  "https://i.ibb.co.com/tTy3zjWT/Whats-App-Image-2026-06-06-at-4-05-06-PM.jpg",
+  "https://i.ibb.co.com/fVM8j3cB/Whats-App-Image-2026-06-09-at-10-29-55-AM.jpg",
   "https://i.ibb.co.com/kVjGXkQs/12.jpg",
 ];
 
