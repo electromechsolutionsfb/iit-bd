@@ -444,7 +444,7 @@ export const texts = {
     bn: "একটি পেশাদার ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট যা দক্ষ, নিরাপত্তা-সচেতন ও ইন্ডাস্ট্রি-রেডি প্রফেশনাল তৈরি করে।",
   },
   footerAddress: {
-    en: "741 (D-1st Floor), Haque Village, Shewrapara, Begum Rokeya Sharani, Mirpur, Dhaka-1216, Bangladesh",
+    en: "House #27/1, Road #2, Sector #15, Uttara, Dhaka-1230",
     bn: "৭৪১ (ডি–১ম তলা), হক ভিলেজ, শেওড়াপাড়া, বেগম রোকেয়া সরণি, মিরপুর, ঢাকা–১২১৬",
   },
   footerQuickLinks: { en: "Quick Links", bn: "দ্রুত লিংক" },
@@ -558,7 +558,7 @@ export const texts = {
     address: {
       title: { en: "Our Address", bn: "আমাদের ঠিকানা" },
       desc: {
-        en: "741, (D-1st Floor), Haque Village, Shewrapara, Begum Rokeya Sharani, Mirpur, Dhaka-1216, Bangladesh",
+        en: "House #27/1, Road #2, Sector #15, Uttara, Dhaka-1230",
         bn: "৭৪১ (ডি–১ম তলা), হক ভিলেজ, শেওড়াপাড়া, বেগম রোকেয়া সরণি, মিরপুর, ঢাকা–১২১৬",
       },
     },
