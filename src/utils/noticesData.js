@@ -7,7 +7,7 @@ export const noticesData = [
     tag: "Admission",
     desc: "Admission for High-Pressure Boiler Operation and Maintenance is now open for the upcoming spring session.",
     details:
-      "Bangladesh Industrial Training Institute (IIT) is now accepting applications...",
+      "Institute of Industrial Technology (IIT) is now accepting applications...",
     pdfUrl: "https://eforms.state.gov/Forms/ds10.PDF",
   },
   {

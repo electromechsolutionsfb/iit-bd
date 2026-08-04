@@ -436,7 +436,7 @@ export const texts = {
     bn: "প্রশিক্ষণ প্রোগ্রাম দেখুন",
   },
   footerInstituteName: {
-    en: "Bangladesh Industrial Training Institute",
+    en: "Institute of Industrial Technology",
     bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট",
   },
   footerDescription: {
@@ -451,7 +451,7 @@ export const texts = {
   footerStudents: { en: "Students", bn: "শিক্ষার্থীদের জন্য" },
   footerSupport: { en: "Support", bn: "সহায়তা" },
   footerCopyright: {
-    en: "Bangladesh Industrial Training Institute. All rights reserved.",
+    en: "Institute of Industrial Technology. All rights reserved.",
     bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট। সর্বস্বত্ব সংরক্ষিত।",
   },
   nav: {
@@ -581,7 +581,7 @@ export const texts = {
   },
   aboutTitle: { en: "Who We Are", bn: "আমরা কারা" },
   aboutSubtitle: {
-    en: "Bangladesh Industrial Training Institute (IIT) is a modern, industry-focused training center dedicated to developing practical technical skills, operational excellence, and safety-driven industrial professionals.",
+    en: "Institute of Industrial Technology (IIT) is a modern, industry-focused training center dedicated to developing practical technical skills, operational excellence, and safety-driven industrial professionals.",
     bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট (IIT) একটি আধুনিক ও শিল্পভিত্তিক প্রশিক্ষণ কেন্দ্র, যা বাস্তব প্রযুক্তিগত দক্ষতা, কার্যকর অপারেশন এবং নিরাপত্তা-নির্ভর ইন্ডাস্ট্রিয়াল প্রফেশনাল তৈরি করতে প্রতিশ্রুতিবদ্ধ।",
   },
   mission: {
