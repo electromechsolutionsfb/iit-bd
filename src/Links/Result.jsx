@@ -20,7 +20,7 @@ import { texts } from "/src/utils/text";
 /* ===== Result Data (Frontend Managed) ===== */
 const resultData = [
   // {
-  //   roll: "BITI-101",
+  //   roll: "IIT-101",
   //   name: { en: "Md. Rahim Uddin", bn: "মোঃ রহিম উদ্দিন" },
   //   course: { en: "High-Pressure Boiler Operations", bn: "হাই-প্রেশার বয়লার অপারেশন" },
   //   status: "pass",
@@ -28,7 +28,7 @@ const resultData = [
   //   remarks: { en: "Excellent technical performance.", bn: "চমৎকার টেকনিক্যাল পারফরম্যান্স।" },
   // },
   // {
-  //   roll: "BITI-102",
+  //   roll: "IIT-102",
   //   name: { en: "Md. Kamal Hossain", bn: "মোঃ কামাল হোসেন" },
   //   course: { en: "Industrial Boiler Maintenance", bn: "ইন্ডাস্ট্রিয়াল বয়লার মেইনটেন্যান্স" },
   //   status: "pass",
@@ -36,7 +36,7 @@ const resultData = [
   //   remarks: { en: "Good operational understanding.", bn: "ভালো অপারেশনাল জ্ঞান।" },
   // },
   // {
-  //   roll: "BITI-103",
+  //   roll: "IIT-103",
   //   name: { en: "Md. Sajib Mia", bn: "মোঃ সাজিব মিয়া" },
   //   course: { en: "Industrial Safety Training", bn: "ইন্ডাস্ট্রিয়াল সেফটি ট্রেনিং" },
   //   status: "waiting",
@@ -44,7 +44,7 @@ const resultData = [
   //   remarks: { en: "Result is under process.", bn: "রেজাল্ট প্রক্রিয়াধীন রয়েছে।" },
   // },
   // {
-  //   roll: "BITI-104",
+  //   roll: "IIT-104",
   //   name: { en: "Abdur Rahman", bn: "আব্দুর রহমান" },
   //   course: { en: "High-Pressure Boiler Operations", bn: "হাই-প্রেশার বয়লার অপারেশন" },
   //   status: "pass",

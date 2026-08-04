@@ -65,7 +65,7 @@ const Job = () => {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-6">
           <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Careers at BITI</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Careers at IIT</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
             {texts.jobTitle[lang]}<span className="text-[#00b89c]">.</span>
@@ -115,18 +115,18 @@ const Job = () => {
         ))}
       </section>
 
-      {/* ===== WHY BITI (INDUSTRY IMAGE THEME) ===== */}
+      {/* ===== WHY IIT (INDUSTRY IMAGE THEME) ===== */}
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <div className="relative rounded-[4rem] overflow-hidden shadow-2xl min-h-[500px] flex items-center">
           <div className="absolute inset-0 z-0">
-            <img src="https://i.ibb.co.com/kVjGXkQs/12.jpg" alt="BITI Career" className="w-full h-full object-cover opacity-20" />
+            <img src="https://i.ibb.co.com/kVjGXkQs/12.jpg" alt="IIT Career" className="w-full h-full object-cover opacity-20" />
             <div className="absolute inset-0 bg-white/90 backdrop-blur-[3px]" />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
           </div>
 
           <div className="relative z-10 p-10 md:p-20 w-full">
             <h2 className="text-4xl md:text-6xl font-black mb-14 text-[#0f172a] leading-tight">
-              {texts.whyCareerBITI[lang]}
+              {texts.whyCareerIIT[lang]}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">

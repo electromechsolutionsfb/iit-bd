@@ -45,11 +45,11 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex justify-between items-center">
 
-            {/* ===== BITI LOGO ===== */}
+            {/* ===== IIT LOGO ===== */}
             <Link to="/" className="relative z-10 transition-transform hover:scale-105 active:scale-95">
               <img
-                src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-BITI.png"
-                alt="BITI Logo"
+                src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-IIT.png"
+                alt="IIT Logo"
                 className="h-14 md:h-16 w-auto rounded-full object-contain"
               />
             </Link>
@@ -125,8 +125,8 @@ const Header = () => {
             >
               <div className="flex items-center justify-between mb-12">
                 <img
-                  src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-BITI.png"
-                  alt="BITI Logo"
+                  src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-IIT.png"
+                  alt="IIT Logo"
                   className="h-12 w-auto"
                 />
                 <button onClick={() => setIsOpen(false)} className="text-[#0f172a]"><X size={28} /></button>
@@ -159,14 +159,14 @@ const Header = () => {
               <div className="mt-auto space-y-4">
                 <div className="p-6 bg-gray-50 rounded-[2rem] border border-gray-100">
                   <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Need Help?</p>
-                  <p className="text-[#0f172a] font-black">info@bitibd.com</p>
+                  <p className="text-[#0f172a] font-black">info@IITbd.com</p>
                 </div>
                 <Link
                   to="/admission"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center w-full bg-[#00b89c] text-white py-5 rounded-[2.5rem] font-black text-xl shadow-xl shadow-[#00b89c]/30 active:scale-95"
                 >
-                  Join BITI Today
+                  Join IIT Today
                 </Link>
               </div>
             </motion.div>

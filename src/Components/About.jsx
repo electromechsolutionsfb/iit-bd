@@ -22,7 +22,7 @@ const About = () => {
         >
           <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-1.5 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Discover BITI</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Discover IIT</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">

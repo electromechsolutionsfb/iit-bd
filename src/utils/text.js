@@ -24,8 +24,8 @@ export const texts = {
   general: { en: "General", bn: "সাধারণ" },
   latestNews: { en: "Latest News", bn: "সর্বশেষ খবর" },
   newsSample: {
-    en: "BITI signed MoU with leading industrial partners.",
-    bn: "শীর্ষস্থানীয় শিল্প প্রতিষ্ঠানের সাথে BITI সমঝোতা স্মারক স্বাক্ষর করেছে।",
+    en: "IIT signed MoU with leading industrial partners.",
+    bn: "শীর্ষস্থানীয় শিল্প প্রতিষ্ঠানের সাথে IIT সমঝোতা স্মারক স্বাক্ষর করেছে।",
   },
   corePrograms: { en: "Core Training Programs", bn: "মূল প্রশিক্ষণ কর্মসূচি" },
   programBoiler: { en: "Boiler Operations", bn: "বয়লার অপারেশন" },
@@ -179,8 +179,8 @@ export const texts = {
     bn: "আপনার রোল নম্বর দিয়ে অফিসিয়াল ফলাফল যাচাই করুন।",
   },
   resultPlaceholder: {
-    en: "Enter Roll Number (e.g. BITI-101)",
-    bn: "রোল নম্বর লিখুন (যেমন: BITI-101)",
+    en: "Enter Roll Number (e.g. IIT-101)",
+    bn: "রোল নম্বর লিখুন (যেমন: IIT-101)",
   },
   resultNotFound: {
     en: "No result found for this roll number.",
@@ -205,9 +205,9 @@ export const texts = {
     bn: "আপনার প্রশিক্ষণের সাথে সামঞ্জস্যপূর্ণ যাচাইকৃত ইন্ডাস্ট্রিয়াল চাকরির সুযোগসমূহ দেখুন।",
   },
   applyNow: { en: "Apply Now", bn: "এখনই আবেদন করুন" },
-  whyCareerBITI: {
-    en: "Why Build Your Career Through BITI",
-    bn: "কেন BITI-এর মাধ্যমে ক্যারিয়ার গড়বেন",
+  whyCareerIIT: {
+    en: "Why Build Your Career Through IIT",
+    bn: "কেন IIT-এর মাধ্যমে ক্যারিয়ার গড়বেন",
   },
   jobBenefits: {
     en: [
@@ -470,8 +470,8 @@ export const texts = {
   footerPhone: { en: "+880 1738 661125", bn: "+৮৮০ ১৭৩৮ ৬৬১১২৫" },
   facilityTitle: { en: "Our Facilities", bn: "আমাদের ফ্যাসিলিটিসমূহ" },
   facilitySubtitle: {
-    en: "Modern industrial equipment, practical training laboratories, and a safety-focused environment—everything required to develop skilled, confident, and industry-ready professionals is available at BITI.",
-    bn: "আধুনিক ইন্ডাস্ট্রিয়াল যন্ত্রপাতি, ব্যবহারিক প্রশিক্ষণ ল্যাব এবং নিরাপত্তা-কেন্দ্রিক পরিবেশ—দক্ষ, আত্মবিশ্বাসী ও ইন্ডাস্ট্রি-রেডি প্রফেশনাল গড়ে তুলতে BITI-তে রয়েছে প্রয়োজনীয় সব সুবিধা।",
+    en: "Modern industrial equipment, practical training laboratories, and a safety-focused environment—everything required to develop skilled, confident, and industry-ready professionals is available at IIT.",
+    bn: "আধুনিক ইন্ডাস্ট্রিয়াল যন্ত্রপাতি, ব্যবহারিক প্রশিক্ষণ ল্যাব এবং নিরাপত্তা-কেন্দ্রিক পরিবেশ—দক্ষ, আত্মবিশ্বাসী ও ইন্ডাস্ট্রি-রেডি প্রফেশনাল গড়ে তুলতে IIT-তে রয়েছে প্রয়োজনীয় সব সুবিধা।",
   },
   facilities: [
     {
@@ -534,8 +534,8 @@ export const texts = {
     bn: "নিরাপদ ও প্রফেশনাল প্রশিক্ষণ পরিবেশ",
   },
   facilityEnvDesc: {
-    en: "Training at BITI is not limited to technical knowledge alone. We ensure a fully controlled, safety-driven, and industry-focused environment where trainees gain real-world experience with confidence.",
-    bn: "BITI-তে প্রশিক্ষণ শুধুমাত্র তাত্ত্বিক জ্ঞানের মধ্যে সীমাবদ্ধ নয়। এখানে রয়েছে সম্পূর্ণ নিয়ন্ত্রিত, নিরাপত্তা-কেন্দ্রিক ও ইন্ডাস্ট্রি-ফোকাসড পরিবেশ।",
+    en: "Training at IIT is not limited to technical knowledge alone. We ensure a fully controlled, safety-driven, and industry-focused environment where trainees gain real-world experience with confidence.",
+    bn: "IIT-তে প্রশিক্ষণ শুধুমাত্র তাত্ত্বিক জ্ঞানের মধ্যে সীমাবদ্ধ নয়। এখানে রয়েছে সম্পূর্ণ নিয়ন্ত্রিত, নিরাপত্তা-কেন্দ্রিক ও ইন্ডাস্ট্রি-ফোকাসড পরিবেশ।",
   },
   facilityEnvPoints: {
     en: [
@@ -568,7 +568,7 @@ export const texts = {
     },
     email: {
       title: { en: "Email Address", bn: "ইমেইল ঠিকানা" },
-      desc: { en: "info@bitibd.com", bn: "info@biti.com" },
+      desc: { en: "info@IITbd.com", bn: "info@IIT.com" },
     },
   },
   contactFormTitle: { en: "Send Us a Message", bn: "আমাদের একটি বার্তা পাঠান" },
@@ -581,8 +581,8 @@ export const texts = {
   },
   aboutTitle: { en: "Who We Are", bn: "আমরা কারা" },
   aboutSubtitle: {
-    en: "Bangladesh Industrial Training Institute (BITI) is a modern, industry-focused training center dedicated to developing practical technical skills, operational excellence, and safety-driven industrial professionals.",
-    bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট (BITI) একটি আধুনিক ও শিল্পভিত্তিক প্রশিক্ষণ কেন্দ্র, যা বাস্তব প্রযুক্তিগত দক্ষতা, কার্যকর অপারেশন এবং নিরাপত্তা-নির্ভর ইন্ডাস্ট্রিয়াল প্রফেশনাল তৈরি করতে প্রতিশ্রুতিবদ্ধ।",
+    en: "Bangladesh Industrial Training Institute (IIT) is a modern, industry-focused training center dedicated to developing practical technical skills, operational excellence, and safety-driven industrial professionals.",
+    bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট (IIT) একটি আধুনিক ও শিল্পভিত্তিক প্রশিক্ষণ কেন্দ্র, যা বাস্তব প্রযুক্তিগত দক্ষতা, কার্যকর অপারেশন এবং নিরাপত্তা-নির্ভর ইন্ডাস্ট্রিয়াল প্রফেশনাল তৈরি করতে প্রতিশ্রুতিবদ্ধ।",
   },
   mission: {
     title: { en: "Our Mission", bn: "আমাদের লক্ষ্য" },
@@ -598,7 +598,7 @@ export const texts = {
       bn: "আন্তর্জাতিক মানসম্পন্ন কারিগরি শিক্ষা প্রদানের মাধ্যমে একটি বিশ্বস্ত ও স্বীকৃত ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট হিসেবে প্রতিষ্ঠিত হওয়া।",
     },
   },
-  whyTitle: { en: "Why Choose BITI", bn: "কেন BITI বেছে নেবেন" },
+  whyTitle: { en: "Why Choose IIT", bn: "কেন IIT বেছে নেবেন" },
   whyItems: {
     en: [
       "Industry-standard laboratories and equipment",

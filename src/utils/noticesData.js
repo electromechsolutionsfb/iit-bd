@@ -7,7 +7,7 @@ export const noticesData = [
     tag: "Admission",
     desc: "Admission for High-Pressure Boiler Operation and Maintenance is now open for the upcoming spring session.",
     details:
-      "Bangladesh Industrial Training Institute (BITI) is now accepting applications...",
+      "Bangladesh Industrial Training Institute (IIT) is now accepting applications...",
     pdfUrl: "https://eforms.state.gov/Forms/ds10.PDF",
   },
   {
@@ -33,9 +33,9 @@ export const noticesData = [
     title: "ISO 9001:2015 Recertification",
     date: "Feb 08, 2026",
     tag: "General",
-    desc: "BITI has successfully completed its annual ISO quality standard audit.",
+    desc: "IIT has successfully completed its annual ISO quality standard audit.",
     details:
-      "We are proud to announce that BITI has maintained its ISO certification...",
+      "We are proud to announce that IIT has maintained its ISO certification...",
     pdfUrl: "https://eforms.state.gov/Forms/ds10.PDF",
   },
   {
@@ -43,9 +43,9 @@ export const noticesData = [
     title: "Live Practical Lab Session",
     date: "Feb 05, 2026",
     tag: "General",
-    desc: "Next week, we are hosting a specialized live practical session on Thermal System Management. Students are required to wear full safety gear (PPE) to participate in the session.BITI has successfully completed its annual ISO quality standard audit.",
+    desc: "Next week, we are hosting a specialized live practical session on Thermal System Management. Students are required to wear full safety gear (PPE) to participate in the session.IIT has successfully completed its annual ISO quality standard audit.",
     details:
-      "We are proud to announce that BITI has maintained its ISO certification...",
+      "We are proud to announce that IIT has maintained its ISO certification...",
     pdfUrl: "https://eforms.state.gov/Forms/ds10.PDF",
   },
 ];

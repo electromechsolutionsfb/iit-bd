@@ -47,7 +47,7 @@ const Notices = () => {
           transition={{ delay: 0.2 }}
           className="text-gray-500 text-xl max-w-2xl mx-auto font-medium"
         >
-          Keep track of important announcements, batch updates, and academic schedules from BITI.
+          Keep track of important announcements, batch updates, and academic schedules from IIT.
         </motion.p>
       </section>
 

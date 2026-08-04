@@ -43,7 +43,7 @@ const Footer = () => {
             />
             <ContactItem 
               icon={<Mail size={18} />} 
-              text="info@bitibd.com" 
+              text="info@IITbd.com" 
             />
             <ContactItem 
               icon={<MapPin size={18} />} 

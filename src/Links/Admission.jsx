@@ -140,7 +140,7 @@ const Admission = () => {
                 {lang === "bn" ? "ভর্তি শুরু করতে প্রস্তুত?" : "Ready to Start?"}
               </h2>
               <p className="text-gray-600 text-lg md:text-xl font-medium max-w-xl mx-auto">
-                Secure your seat today and join the league of industry professionals at BITI.
+                Secure your seat today and join the league of industry professionals at IIT.
               </p>
               <button
                 onClick={() => setOpenForm(true)}

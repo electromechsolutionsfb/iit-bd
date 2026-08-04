@@ -113,7 +113,7 @@ const StartTraining = () => {
                 Empowering the Next <br /> Generation of <span className="text-[#00b89c]">Experts.</span>
               </h2>
               <p className="text-gray-600 text-lg font-medium leading-relaxed">
-                BITI provides world-class industrial training following safety standards. Join us today to accelerate your professional growth.
+                IIT provides world-class industrial training following safety standards. Join us today to accelerate your professional growth.
               </p>
             </div>
             
@@ -124,7 +124,7 @@ const StartTraining = () => {
                     <UserCheck size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-widest text-gray-400">Join BITI</p>
+                    <p className="text-xs font-black uppercase tracking-widest text-gray-400">Join IIT</p>
                     <p className="font-black text-[#0f172a]">Industrial Training Experts</p>
                   </div>
                </div>
