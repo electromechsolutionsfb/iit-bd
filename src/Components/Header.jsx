@@ -48,7 +48,7 @@ const Header = () => {
             {/* ===== IIT LOGO ===== */}
             <Link to="/" className="relative z-10 transition-transform hover:scale-105 active:scale-95">
               <img
-                src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-IIT.png"
+                src="https://i.ibb.co.com/F435rwXH/logo.png"
                 alt="IIT Logo"
                 className="h-14 md:h-16 w-auto rounded-full object-contain"
               />
@@ -125,7 +125,7 @@ const Header = () => {
             >
               <div className="flex items-center justify-between mb-12">
                 <img
-                  src="https://i.ibb.co.com/cKgc3TgP/Update-Logo-IIT.png"
+                  src="https://i.ibb.co.com/F435rwXH/logo.png"
                   alt="IIT Logo"
                   className="h-12 w-auto"
                 />
