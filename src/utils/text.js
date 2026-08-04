@@ -5,7 +5,7 @@ export const texts = {
   about: { en: "About Us", bn: "আমাদের সম্পর্কে" },
   contact: { en: "Contact", bn: "যোগাযোগ" },
   heroTitle: {
-    en: "Bangladesh Industrial Training Institute",
+    en: "Institute of Industrial Technology",
     bn: "বাংলাদেশ ইন্ডাস্ট্রিয়াল ট্রেনিং ইনস্টিটিউট",
   },
   heroSubtitle: {
