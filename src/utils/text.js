@@ -49,7 +49,7 @@ export const texts = {
   galleryTitle: { en: "Training Gallery", bn: "প্রশিক্ষণ গ্যালারি" },
   leadershipTitle: { en: "Leadership", bn: "নেতৃত্ববৃন্দ" },
   hotline: { en: "Admission & Support Hotline", bn: "ভর্তি ও সহায়তা হটলাইন" },
-  hotlineNumber: { en: "+880 1738 661125", bn: "০১৭৩৮-৬৬১১২৫" },
+  hotlineNumber: { en: "+880 1845 772839", bn: "০১৭৩৮-৬৬১১২৫" },
   ctaTitle: {
     en: "Start Your Professional Training Journey",
     bn: "আপনার পেশাদার প্রশিক্ষণ যাত্রা শুরু করুন",
@@ -467,7 +467,7 @@ export const texts = {
     startTraining: { en: "Start Training", bn: "প্রশিক্ষণ শুরু করুন" },
     support: { en: "Support", bn: "সহায়তা" },
   },
-  footerPhone: { en: "+880 1738 661125", bn: "+৮৮০ ১৭৩৮ ৬৬১১২৫" },
+  footerPhone: { en: "+880 1845 772839", bn: "+৮৮০ ১৭৩৮ ৬৬১১২৫" },
   facilityTitle: { en: "Our Facilities", bn: "আমাদের ফ্যাসিলিটিসমূহ" },
   facilitySubtitle: {
     en: "Modern industrial equipment, practical training laboratories, and a safety-focused environment—everything required to develop skilled, confident, and industry-ready professionals is available at IIT.",
@@ -564,11 +564,11 @@ export const texts = {
     },
     phone: {
       title: { en: "Phone Number", bn: "ফোন নম্বর" },
-      desc: { en: "+880 1738 661125", bn: "+৮৮০১৭৩৮ ৬৬১১২৫" },
+      desc: { en: "+880 1845 772839", bn: "+৮৮০১৭৩৮ ৬৬১১২৫" },
     },
     email: {
       title: { en: "Email Address", bn: "ইমেইল ঠিকানা" },
-      desc: { en: "info@IITbd.com", bn: "info@IIT.com" },
+      desc: { en: "info@iitbd.com", bn: "info@iitbd.com" },
     },
   },
   contactFormTitle: { en: "Send Us a Message", bn: "আমাদের একটি বার্তা পাঠান" },

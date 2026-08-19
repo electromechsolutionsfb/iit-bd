@@ -31,10 +31,10 @@ const Admission = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Academic Enrollment 2026</span>
-          </div>
+          </div> */}
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
             {texts.admissionTitle[lang]}<span className="text-[#00b89c]">.</span>

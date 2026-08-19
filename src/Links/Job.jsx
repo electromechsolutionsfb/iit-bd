@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Briefcase,
-  MapPin,
-  Clock,
+  Award,
   CheckCircle2,
   ChevronRight,
   X,
@@ -12,48 +10,90 @@ import {
   FileText,
   Sparkles,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  BookOpen,
+  GraduationCap,
+  Briefcase
 } from "lucide-react";
 import { useLanguage } from "../Context/LanguageContext";
 import { texts } from "/src/utils/text";
 
-/* ===== Job Data ===== */
-const jobData = [
+/* ===== Course & License Career Features ===== */
+const careerFeatures = [
   {
     id: 1,
-    title: { en: "Boiler Operator", bn: "বয়লার অপারেটর" },
-    location: { en: "Dhaka / Gazipur", bn: "ঢাকা / গাজীপুর" },
-    type: { en: "Full Time", bn: "ফুল টাইম" },
-    requirements: {
-      en: ["Knowledge of high-pressure boiler operations", "Industrial experience preferred", "Strong understanding of safety SOP compliance"],
-      bn: ["হাই-প্রেশার বয়লার অপারেশনের জ্ঞান", "ইন্ডাস্ট্রিয়াল অভিজ্ঞতা অগ্রাধিকারযোগ্য", "সেফটি SOP সম্পর্কে ভালো ধারণা"]
+    title: { 
+      en: "Government Boiler License Assistance", 
+      bn: "সরকারি বয়লার লাইসেন্স প্রাপ্তিতে শতভাগ সহায়তা" 
+    },
+    subtitle: { 
+      en: "Complete guidance for Govt Boiler Board Examination", 
+      bn: "সরকারি লাইসেন্স পরীক্ষার যাবতীয় প্রস্তুতি, ফরম ফিলাপ ও সার্বিক সহযোগিতা।" 
+    },
+    details: {
+      en: [
+        "Special exam preparation classes based on Government Boiler Board guidelines.",
+        "Complete assistance in document verification & application process.",
+        "Mock exams and practical interview sessions to pass on the first attempt."
+      ],
+      bn: [
+        "সরকারি বয়লার বোর্ডের সিলেবাস অনুযায়ী বিশেষ পরীক্ষার প্রস্তুতিমূলক ক্লাস।",
+        "পরীক্ষার আবেদন, কাগজপত্র যাচাই ও সাবমিশনে প্রয়োজনীয় সকল সাপোর্ট।",
+        "প্রথমবারেই লাইসেন্স অর্জনের জন্য প্র্যাকটিক্যাল মক পরীক্ষা ও ইন্টারভিউ প্রস্তুতি।"
+      ]
     },
   },
   {
     id: 2,
-    title: { en: "Boiler Maintenance Technician", bn: "বয়লার মেইনটেন্যান্স টেকনিশিয়ান" },
-    location: { en: "Narayanganj", bn: "নারায়ণগঞ্জ" },
-    type: { en: "Full Time", bn: "ফুল টাইম" },
-    requirements: {
-      en: ["Maintenance and troubleshooting expertise", "Understanding of valves, pumps, and pipelines", "Willingness to work in field environments"],
-      bn: ["মেইনটেন্যান্স ও ট্রাবলশুটিং দক্ষতা", "ভাল্ভ, পাম্প ও পাইপলাইনের জ্ঞান", "ফিল্ডে কাজ করার মানসিকতা"]
+    title: { 
+      en: "Exclusive Single Comprehensive Boiler Course", 
+      bn: "১টি মাত্র সমন্বিত আধুনিক বয়লার ট্রেনিং কোর্স" 
+    },
+    subtitle: { 
+      en: "Batch 2 (September 2026) - Limited 35 Seats", 
+      bn: "১ম ব্যাচ সফলভাবে সম্পন্ন। ২য় ব্যাচে ভর্তি চলছে (সেপ্টেম্বর ২০২৬, মাত্র ৩৫ সিট)।" 
+    },
+    details: {
+      en: [
+        "100% practical training on real industrial boiler systems.",
+        "Covers high-pressure boiler operations, maintenance, & safety SOPs.",
+        "In-depth knowledge that builds high demand in the job market."
+      ],
+      bn: [
+        "বাস্তব শিল্পকারখানার বয়লার সিস্টেমে শতভাগ হ্যান্ডস-অন প্র্যাকটিক্যাল ট্রেনিং।",
+        "হাই-প্রেশার বয়লার অপারেশন, মেইনটেন্যান্স ও ইন্ডাস্ট্রিয়াল সেফটি ট্রেনিং।",
+        "এমনভাবে প্রস্তুত করা হয় যেন প্রার্থীরা যেকোনো কারখানায় কাজ করতে প্রস্তুত থাকে।"
+      ]
     },
   },
   {
     id: 3,
-    title: { en: "Industrial Safety Officer", bn: "ইন্ডাস্ট্রিয়াল সেফটি অফিসার" },
-    location: { en: "Chattogram", bn: "চট্টগ্রাম" },
-    type: { en: "Full Time", bn: "ফুল টাইম" },
-    requirements: {
-      en: ["Knowledge of industrial safety laws and compliance", "Experience conducting PPE and safety drills", "Strong reporting and documentation skills"],
-      bn: ["ইন্ডাস্ট্রিয়াল সেফটি আইন সম্পর্কে জ্ঞান", "PPE ও সেফটি ড্রিল পরিচালনার অভিজ্ঞতা", "রিপোর্টিং ও ডকুমেন্টেশন দক্ষতা"]
+    title: { 
+      en: "High Job Prospects with Govt License", 
+      bn: "লাইসেন্স প্রাপ্তির মাধ্যমে সহজ ও নিশ্চিত চাকরির সুযোগ" 
+    },
+    subtitle: { 
+      en: "Become a high-demand professional across top industries", 
+      bn: "সরকারি লাইসেন্স অর্জন করলে দেশে-বিদেশে চাকরির দ্বারে অগ্রাধিকার।" 
+    },
+    details: {
+      en: [
+        "A valid Government Boiler License makes job recruitment extremely smooth.",
+        "Top garments, pharmaceuticals, & manufacturing plants prioritize certified operators.",
+        "Complete career counseling and resume guidance after course completion."
+      ],
+      bn: [
+        "সরকারি লাইসেন্স থাকলে যেকোনো বড় শিল্পকারখানায় সরাসরি চাকরি পাওয়া অনেক সহজ হয়।",
+        "টেক্সটাইল, ফার্মাসিউটিক্যালস ও ম্যানুফ্যাকচারিং প্ল্যান্টে লাইসেন্সধারীদের অগ্রাধিকার।",
+        "কোর্স শেষে ভাইভা গাইডলাইন, কভার লেটার ও সিভি তৈরিতে বিশেষ পরামর্শ।"
+      ]
     },
   },
 ];
 
 const Job = () => {
   const { lang } = useLanguage();
-  const [activeJob, setActiveJob] = useState(null);
+  const [activeFeature, setActiveFeature] = useState(null);
 
   return (
     <main className="min-h-screen pt-32 bg-[#f8fafc] text-[#0f172a] selection:bg-[#00e1bf]/30 transition-colors">
@@ -61,26 +101,31 @@ const Job = () => {
       {/* ===== HERO SECTION ===== */}
       <section className="relative max-w-7xl mx-auto px-6 text-center mb-24">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#00b89c]/10 rounded-full blur-[120px] -z-10" />
-        
+
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-6">
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Careers at IIT</span>
-          </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
+              {lang === "bn" ? "ক্যারিয়ার ও ট্রেনিং সাপোর্ট" : "Career & Training Support"}
+            </span>
+          </div> */}
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-            {texts.jobTitle[lang]}<span className="text-[#00b89c]">.</span>
+            {lang === "bn" ? "প্রশিক্ষণ ও সরকারি লাইসেন্স গাইড" : "Training & Govt License Guide"}
+            <span className="text-[#00b89c]">.</span>
           </h1>
           <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-            {texts.jobSubtitle[lang]}
+            {lang === "bn" 
+              ? "আমরা সরাসরি চাকরি প্রদান করি না; তবে আমাদের একমাত্র সমন্বিত বয়লার কোর্স সম্পন্ন করলে আপনি সহজেই সরকারি বয়লার লাইসেন্স পাবেন। পরীক্ষার যাবতীয় প্রস্তুতি ও সহযোগিতা আমরা করব, যা আপনাকে সহজে ভালো চাকরি পেতে সাহায্য করবে।" 
+              : "We don't recruit directly; our single comprehensive boiler course helps you easily earn a Government Boiler License. We provide full support for the Govt exam, ensuring easy job placements."}
           </p>
         </motion.div>
       </section>
 
-      {/* ===== JOB LIST ===== */}
+      {/* ===== FEATURE LIST ===== */}
       <section className="max-w-6xl mx-auto px-6 mb-32 space-y-6">
-        {jobData.map((job, i) => (
+        {careerFeatures.map((feature, i) => (
           <motion.div
-            key={job.id}
+            key={feature.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,33 +134,29 @@ const Job = () => {
           >
             <div className="absolute top-0 left-0 w-1.5 h-full bg-[#00b89c] opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="flex-1">
-              <h3 className="text-2xl md:text-3xl font-black mb-4 flex items-center gap-3 text-[#0f172a]">
-                <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] text-[#00b89c] flex items-center justify-center shadow-sm">
-                   <Briefcase size={24} />
+              <h3 className="text-2xl md:text-3xl font-black mb-3 flex items-center gap-3 text-[#0f172a]">
+                <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] text-[#00b89c] flex items-center justify-center shadow-sm shrink-0">
+                   {feature.id === 1 ? <Award size={24} /> : feature.id === 2 ? <BookOpen size={24} /> : <GraduationCap size={24} />}
                 </div>
-                {job.title[lang]}
+                {feature.title[lang]}
               </h3>
-              <div className="flex flex-wrap gap-6 text-gray-400 font-bold text-xs uppercase tracking-widest">
-                <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
-                  <MapPin size={14} className="text-[#00b89c]" /> {job.location[lang]}
-                </span>
-                <span className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
-                  <Clock size={14} className="text-[#00b89c]" /> {job.type[lang]}
-                </span>
-              </div>
+              <p className="text-gray-500 font-medium text-base ml-15">
+                {feature.subtitle[lang]}
+              </p>
             </div>
 
             <button
-              onClick={() => setActiveJob(job)}
-              className="bg-[#0f172a] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 hover:bg-[#00b89c] transition-all shadow-xl shadow-gray-200 hover:shadow-[#00b89c]/30 active:scale-95 group/btn"
+              onClick={() => setActiveFeature(feature)}
+              className="bg-[#0f172a] text-white font-black px-8 py-5 rounded-2xl inline-flex items-center justify-center gap-3 hover:bg-[#00b89c] transition-all shadow-xl shadow-gray-200 hover:shadow-[#00b89c]/30 active:scale-95 group/btn shrink-0"
             >
-              {texts.applyNow[lang]} <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+              {lang === "bn" ? "বিস্তারিত দেখুন" : "View Details"} 
+              <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </motion.div>
         ))}
       </section>
 
-      {/* ===== WHY IIT (INDUSTRY IMAGE THEME) ===== */}
+      {/* ===== WHY GOVT LICENSE MATTERS ===== */}
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <div className="relative rounded-[4rem] overflow-hidden shadow-2xl min-h-[500px] flex items-center">
           <div className="absolute inset-0 z-0">
@@ -126,17 +167,22 @@ const Job = () => {
 
           <div className="relative z-10 p-10 md:p-20 w-full">
             <h2 className="text-4xl md:text-6xl font-black mb-14 text-[#0f172a] leading-tight">
-              {texts.whyCareerIIT[lang]}
+              {lang === "bn" ? "আমাদের সাপোর্ট ও লাইসেন্স সুবিধা" : "Our Course & License Benefits"}
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-              {texts.jobBenefits[lang].map((item, i) => (
+              {[
+                lang === "bn" ? "১টি মাত্র সমন্বিত বয়লার প্রশিক্ষণ কোর্স" : "Single Comprehensive Boiler Training Course",
+                lang === "bn" ? "সরকারি বয়লার পরীক্ষার যাবতীয় ফর্মালিটিজে সহায়তা" : "Complete Support for Govt Boiler Exam & Formality",
+                lang === "bn" ? "সরকারি লাইসেন্স অর্জনের মাধ্যমে সহজ চাকরির সুযোগ" : "Easy Job Opportunities with Govt License",
+                lang === "bn" ? "সেপ্টেম্বর ২০২৬-এর ২য় ব্যাচে সীমিত ৩৫ সিট" : "Limited 35 Seats in September 2026 Batch"
+              ].map((item, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ x: 10 }}
                   className="flex items-center gap-4 bg-white/60 backdrop-blur-md border border-white p-6 rounded-[2rem] shadow-sm group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#00b89c]/10 flex items-center justify-center text-[#00b89c] group-hover:bg-[#00b89c] group-hover:text-white transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-[#00b89c]/10 flex items-center justify-center text-[#00b89c] group-hover:bg-[#00b89c] group-hover:text-white transition-all shrink-0">
                     <CheckCircle2 size={20} />
                   </div>
                   <span className="font-bold text-[#0f172a]">{item}</span>
@@ -147,39 +193,38 @@ const Job = () => {
         </div>
       </section>
 
-      {/* ===== APPLY MODAL ===== */}
+      {/* ===== DETAILS MODAL ===== */}
       <AnimatePresence>
-        {activeJob && (
+        {activeFeature && (
           <Modal
-            title={`${texts.applyFor[lang]} ${activeJob.title[lang]}`}
-            onClose={() => setActiveJob(null)}
+            title={activeFeature.title[lang]}
+            onClose={() => setActiveFeature(null)}
           >
-            <div className="space-y-4 mb-10">
+            <div className="space-y-4 mb-8">
               <h4 className="font-black text-sm uppercase tracking-widest text-[#00b89c]">
-                {texts.jobRequirements[lang]}
+                {lang === "bn" ? "কী কী সুবিধা পাবেন:" : "Key Benefits & Features:"}
               </h4>
-              <div className="space-y-3">
-                {activeJob.requirements[lang].map((req, i) => (
-                  <div key={i} className="flex items-start gap-3 text-gray-600 font-medium">
-                    <CheckCircle2 size={18} className="text-[#00b89c] mt-0.5 shrink-0" />
-                    <span>{req}</span>
+              <div className="space-y-4">
+                {activeFeature.details[lang].map((detail, i) => (
+                  <div key={i} className="flex items-start gap-3 text-gray-700 font-medium text-base">
+                    <ShieldCheck size={20} className="text-[#00b89c] mt-0.5 shrink-0" />
+                    <span>{detail}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <Input icon={<User size={18} />} placeholder={texts.fullName[lang]} />
-              <Input icon={<Phone size={18} />} placeholder={texts.contactNumber[lang]} />
-              <Input icon={<FileText size={18} />} placeholder={texts.experience[lang]} />
-
+            <div className="pt-6 border-t border-gray-100">
+              <p className="text-xs text-gray-400 font-semibold mb-6">
+                * {lang === "bn" ? "আমাদের সেপ্টেম্বর ২০২৬-এর ২য় ব্যাচে মাত্র ৩৫টি আসন খালি রয়েছে।" : "Limited 35 seats available for September 2026 Batch 2."}
+              </p>
               <button
-                type="submit"
-                className="w-full bg-[#00b89c] text-white font-black py-5 rounded-2xl hover:bg-[#0f172a] transition-all shadow-xl shadow-[#00b89c]/20 active:scale-95 flex items-center justify-center gap-3"
+                onClick={() => setActiveFeature(null)}
+                className="w-full bg-[#00b89c] text-white font-black py-4 rounded-2xl hover:bg-[#0f172a] transition-all shadow-xl shadow-[#00b89c]/20 active:scale-95 flex items-center justify-center gap-2"
               >
-                {texts.submitApplication[lang]} <ArrowRight size={18} />
+                {lang === "bn" ? "ঠিক আছে" : "Got It"}
               </button>
-            </form>
+            </div>
           </Modal>
         )}
       </AnimatePresence>
@@ -209,22 +254,10 @@ const Modal = ({ title, children, onClose }) => (
       >
         <X size={20} />
       </button>
-      <h3 className="text-3xl font-black mb-10 text-[#0f172a] leading-tight pr-8">{title}</h3>
+      <h3 className="text-2xl md:text-3xl font-black mb-8 text-[#0f172a] leading-tight pr-8">{title}</h3>
       {children}
     </motion.div>
   </motion.div>
-);
-
-const Input = ({ icon, placeholder }) => (
-  <div className="flex items-center gap-4 bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus-within:border-[#00b89c] focus-within:bg-white transition-all group">
-    <span className="text-[#00b89c] group-focus-within:scale-110 transition-transform">{icon}</span>
-    <input
-      type="text"
-      required
-      placeholder={placeholder}
-      className="bg-transparent w-full outline-none text-[#0f172a] font-bold placeholder:text-gray-400"
-    />
-  </div>
 );
 
 export default Job;

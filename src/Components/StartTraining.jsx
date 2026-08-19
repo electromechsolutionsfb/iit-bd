@@ -48,24 +48,31 @@ const StartTraining = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <Zap size={14} className="text-[#00b89c]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Quick Start Guide</span>
-          </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
+              {lang === "bn" ? "ভর্তি নির্দেশনা ও গাইড" : "Quick Admission Guide"}
+            </span>
+          </div> */}
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-            {texts.startTrainingTitle[lang]}<span className="text-[#00b89c]">.</span>
+            {texts.startTrainingTitle?.[lang] || (lang === "bn" ? "প্রশিক্ষণ শুরু করুন" : "Start Your Training")}
+            <span className="text-[#00b89c]">.</span>
           </h1>
 
           <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto font-medium">
-            {texts.startTrainingSubtitle[lang]}
+            {texts.startTrainingSubtitle?.[lang] || (lang === "bn" ? "আমাদের একমাত্র সমন্বিত বয়লার ট্রেনিং কোর্সের ২য় ব্যাচে (সেপ্টেম্বর ২০২৬) ভর্তি হয়ে আপনার শিল্পভিত্তিক ক্যারিয়ার গড়ে তুলুন।" : "Join Batch 2 (September 2026) of our comprehensive boiler training course to build your industrial career.")}
           </p>
         </motion.div>
       </section>
 
       {/* ===== STEPS GRID WITH NUMBERS ===== */}
       <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 mb-32">
-        {texts.startTrainingSteps[lang].map((step, i) => (
+        {(texts.startTrainingSteps?.[lang] || [
+          { key: "form", title: lang === "bn" ? "অনলাইন আবেদন" : "Online Form", desc: lang === "bn" ? "সহজ ফর্মে আপনার নাম, যোগাযোগের নম্বর ও শিক্ষাগত যোগ্যতা দিয়ে আবেদন করুন।" : "Fill up the quick form with basic details." },
+          { key: "team", title: lang === "bn" ? "পরামর্শ ও যাচাইকরণ" : "Consultation", desc: lang === "bn" ? "আমাদের প্রতিনিধি যোগাযোগ করে কোর্স ও ভর্তি সম্পর্কিত গাইডলাইন দেবেন।" : "Our team contacts you to verify details." },
+          { key: "start", title: lang === "bn" ? "ভর্তি নিশ্চিতকরণ" : "Confirm Admission", desc: lang === "bn" ? "ফি পরিশোধ করে সেপ্টেম্বর ২০২৬-এর ২য় ব্যাচে আসন নিশ্চিত করুন।" : "Pay fee & confirm your seat in Batch 2." }
+        ]).map((step, i) => (
           <motion.div
             key={step.key}
             whileHover={{ y: -10 }}
@@ -87,17 +94,17 @@ const StartTraining = () => {
             <p className="text-gray-500 text-sm leading-relaxed font-medium mb-8">{step.desc}</p>
             
             <div className="inline-flex items-center gap-2 text-[#00b89c] font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-              Step Details <ArrowRight size={14} />
+              {lang === "bn" ? "ধাপের বিবরণ" : "Step Details"} <ArrowRight size={14} />
             </div>
           </motion.div>
         ))}
       </section>
 
-      {/* ===== SUPPORT INFO SECTION (WITH INDUSTRY BG - NO BLACK) ===== */}
+      {/* ===== SUPPORT INFO SECTION ===== */}
       <section className="max-w-7xl mx-auto px-6 mb-32">
         <div className="relative rounded-[4rem] overflow-hidden shadow-2xl flex items-center min-h-[500px]">
           <div className="absolute inset-0 z-0">
-            {/* Industry Background Overlay - White/Teal Mix */}
+            {/* Industry Background Overlay */}
             <img 
               src="https://i.ibb.co.com/kVjGXkQs/12.jpg" 
               alt="Industrial Future" 
@@ -110,10 +117,16 @@ const StartTraining = () => {
           <div className="relative z-10 p-10 md:p-20 w-full flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="max-w-xl space-y-6">
               <h2 className="text-4xl md:text-5xl font-black text-[#0f172a] leading-tight">
-                Empowering the Next <br /> Generation of <span className="text-[#00b89c]">Experts.</span>
+                {lang === "bn" ? (
+                  <>শিল্পক্ষেত্রের জন্য তৈরি করুন <br />দক্ষ <span className="text-[#00b89c]">পেশাদার নিজেকে।</span></>
+                ) : (
+                  <>Empowering the Next <br /> Generation of <span className="text-[#00b89c]">Experts.</span></>
+                )}
               </h2>
               <p className="text-gray-600 text-lg font-medium leading-relaxed">
-                IIT provides world-class industrial training following safety standards. Join us today to accelerate your professional growth.
+                {lang === "bn" 
+                  ? "আইআইটি আন্তর্জাতিক সেফটি স্ট্যান্ডার্ড ও বাস্তব প্র্যাকটিক্যাল ভিত্তিক বয়লার ট্রেনিং প্রদান করে। ২য় ব্যাচে আসন সংখ্যা সীমিত (মাত্র ৩৫টি)।" 
+                  : "IIT provides world-class industrial training following safety standards. Join Batch 2 today to accelerate your growth."}
               </p>
             </div>
             
@@ -124,16 +137,22 @@ const StartTraining = () => {
                     <UserCheck size={24} />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-widest text-gray-400">Join IIT</p>
-                    <p className="font-black text-[#0f172a]">Industrial Training Experts</p>
+                    <p className="text-xs font-black uppercase tracking-widest text-gray-400">
+                      {lang === "bn" ? "আইআইটি ট্রেনিং" : "Join IIT"}
+                    </p>
+                    <p className="font-black text-[#0f172a]">
+                      {lang === "bn" ? "ইন্ডাস্ট্রিয়াল বয়লার বিশেষজ্ঞ" : "Boiler Training Experts"}
+                    </p>
                   </div>
                </div>
-               <p className="text-gray-500 text-sm font-medium mb-8 italic">"Building skilled professionals for a better industrial future."</p>
+               <p className="text-gray-500 text-sm font-medium mb-8 italic">
+                 {lang === "bn" ? '"শিল্পক্ষেত্রের অগ্রযাত্রায় দক্ষ ও নিরাপদ জনবল গড়ে তোলাই আমাদের লক্ষ্য।"' : '"Building skilled professionals for a better industrial future."'}
+               </p>
                <button 
                   onClick={() => setOpenAdmission(true)}
                   className="w-full bg-[#0f172a] text-white py-4 rounded-2xl font-black hover:bg-[#00b89c] transition-all shadow-xl active:scale-95"
                >
-                  Get Started Now
+                  {lang === "bn" ? "এখনই আবেদন করুন" : "Get Started Now"}
                </button>
             </div>
           </div>
@@ -144,25 +163,25 @@ const StartTraining = () => {
       <AnimatePresence>
         {activeModal && (
           <InfoModal 
-            title={activeModal === "team" ? texts.consultationTitle[lang] : texts.startBenefitsTitle[lang]} 
+            title={activeModal === "team" ? (texts.consultationTitle?.[lang] || (lang === "bn" ? "পরামর্শ সেবা" : "Consultation")) : (texts.startBenefitsTitle?.[lang] || (lang === "bn" ? "কোর্সের সুবিধাসমূহ" : "Course Benefits"))} 
             onClose={closeModal}
           >
             {activeModal === "team" ? (
               <div className="space-y-4 relative z-10">
-                <InfoRow icon={<Briefcase size={20} />} text={texts.consultationRole[lang]} />
-                <InfoRow icon={<Phone size={20} />} text="+880 1XXX-XXXXXX" />
-                <InfoRow icon={<ShieldCheck size={20} />} text={texts.consultationGuide[lang]} />
+                <InfoRow icon={<Briefcase size={20} />} text={texts.consultationRole?.[lang] || (lang === "bn" ? "অভিজ্ঞ ইনস্ট্রাক্টর ও অ্যাডমিশন টিম" : "Admission & Guidance Team")} />
+                <InfoRow icon={<Phone size={20} />} text="+880 1700-000000" />
+                <InfoRow icon={<ShieldCheck size={20} />} text={texts.consultationGuide?.[lang] || (lang === "bn" ? "সরাসরি ফোন বা হোয়াটসঅ্যাপে পরামর্শের সুযোগ" : "Direct phone or WhatsApp support")} />
               </div>
             ) : (
               <div className="space-y-4 relative z-10">
-                <InfoRow icon={<ShieldCheck size={20} />} text={texts.startBenefit1[lang]} />
-                <InfoRow icon={<Award size={20} />} text={texts.startBenefit2[lang]} />
-                <InfoRow icon={<CheckCircle2 size={20} />} text={texts.startBenefit3[lang]} />
+                <InfoRow icon={<ShieldCheck size={20} />} text={texts.startBenefit1?.[lang] || (lang === "bn" ? "১০০% প্র্যাকটিক্যাল ও ইন্ডাস্ট্রিয়াল সেফটি ট্রেনিং" : "100% Practical & Safety Training")} />
+                <InfoRow icon={<Award size={20} />} text={texts.startBenefit2?.[lang] || (lang === "bn" ? "কোর্স সম্পন্ন শেষে ইন্সটিটিউশনাল সার্টিফিকেট" : "Institutional Certificate upon completion")} />
+                <InfoRow icon={<CheckCircle2 size={20} />} text={texts.startBenefit3?.[lang] || (lang === "bn" ? "ইন্ডাস্ট্রিয়াল জব ক্ষেত্রে ক্যারিয়ার গাইডলাইন" : "Industrial Job Career Guidance")} />
                 <button
                   onClick={() => { closeModal(); navigate("/training"); }}
                   className="mt-6 w-full bg-[#00b89c] text-white font-black py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#0f172a] transition-all shadow-xl shadow-[#00b89c]/30"
                 >
-                  {texts.viewTraining[lang]} <ArrowRight size={18} />
+                  {texts.viewTraining?.[lang] || (lang === "bn" ? "ট্রেনিং বিবরণী দেখুন" : "View Training Details")} <ArrowRight size={18} />
                 </button>
               </div>
             )}
@@ -179,7 +198,7 @@ const StartTraining = () => {
   );
 };
 
-/* ===== REUSABLE INFO MODAL COMPONENT (THEME READY) ===== */
+/* ===== REUSABLE INFO MODAL COMPONENT ===== */
 
 const InfoModal = ({ title, children, onClose }) => (
   <motion.div

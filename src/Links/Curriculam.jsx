@@ -19,12 +19,12 @@ import {
 import { useLanguage } from "../Context/LanguageContext";
 import { texts } from "/src/utils/text";
 
-/* ===== Extended Curriculum Data ===== */
+/* ===== Single Course Module Curriculum Data ===== */
 const curriculumData = [
   {
     id: 1,
     title: { en: "High-Pressure Boiler Operations", bn: "হাই-প্রেশার বয়লার অপারেশন" },
-    duration: { en: "6 Weeks", bn: "৬ সপ্তাহ" },
+    duration: { en: "Module 1", bn: "মডিউল ১" },
     icon: <Gauge size={24} />,
     modules: {
       en: ["Fundamentals of industrial boilers", "Operational procedures", "Startup/Shutdown protocols", "Steam pressure control", "Practical sessions"],
@@ -35,7 +35,7 @@ const curriculumData = [
   {
     id: 2,
     title: { en: "Boiler Maintenance & Troubleshooting", bn: "বয়লার মেইনটেন্যান্স ও ট্রাবলশুটিং" },
-    duration: { en: "5 Weeks", bn: "৫ সপ্তাহ" },
+    duration: { en: "Module 2", bn: "মডিউল ২" },
     icon: <Wrench size={24} />,
     modules: {
       en: ["Preventive strategies", "Inspection of pipelines", "Leakage detection", "Troubleshooting case studies"],
@@ -46,7 +46,7 @@ const curriculumData = [
   {
     id: 3,
     title: { en: "Industrial Safety & Compliance", bn: "ইন্ডাস্ট্রিয়াল সেফটি ও কমপ্লায়েন্স" },
-    duration: { en: "3 Weeks", bn: "৩ সপ্তাহ" },
+    duration: { en: "Module 3", bn: "মডিউল ৩" },
     icon: <ShieldCheck size={24} />,
     modules: {
       en: ["Safety laws and SOP", "Explosion risk prevention", "PPE usage", "Accident investigation"],
@@ -57,7 +57,7 @@ const curriculumData = [
   {
     id: 4,
     title: { en: "Water Treatment & Chemistry", bn: "ওয়াটার ট্রিটমেন্ট ও কেমিস্ট্রি" },
-    duration: { en: "4 Weeks", bn: "৪ সপ্তাহ" },
+    duration: { en: "Module 4", bn: "মডিউল ৪" },
     icon: <Droplets size={24} />,
     modules: {
       en: ["Feed water quality analysis", "Chemical softening processes", "Corrosion techniques", "Laboratory testing"],
@@ -68,7 +68,7 @@ const curriculumData = [
   {
     id: 5,
     title: { en: "Electrical & Instrumentation", bn: "ইলেক্ট্রিক্যাল ও ইনস্ট্রুমেন্টেশন" },
-    duration: { en: "4 Weeks", bn: "৪ সপ্তাহ" },
+    duration: { en: "Module 5", bn: "মডিউল ৫" },
     icon: <Zap size={24} />,
     modules: {
       en: ["Control panel components", "Sensor calibration", "PLC for automation", "Electrical grounding"],
@@ -79,7 +79,7 @@ const curriculumData = [
   {
     id: 6,
     title: { en: "Environmental Management", bn: "এনভায়রনমেন্টাল ম্যানেজমেন্ট" },
-    duration: { en: "2 Weeks", bn: "২ সপ্তাহ" },
+    duration: { en: "Module 6", bn: "মডিউল ৬" },
     icon: <Settings size={24} />,
     modules: {
       en: ["Emission monitoring", "Waste heat recovery", "Environmental regulations", "Efficiency optimization"],
@@ -90,7 +90,7 @@ const curriculumData = [
   {
     id: 7,
     title: { en: "Supervisory Leadership", bn: "সুপারভাইজরি লিডারশিপ ট্রেনিং" },
-    duration: { en: "3 Weeks", bn: "৩ সপ্তাহ" },
+    duration: { en: "Module 7", bn: "মডিউল ৭" },
     icon: <HardHat size={24} />,
     modules: {
       en: ["Team management", "Industrial communication", "Conflict resolution", "Project reporting"],
@@ -112,15 +112,18 @@ const Curriculam = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 bg-[#00b89c]/10 rounded-full blur-[120px] -z-10" />
         
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Educational Framework</span>
-          </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
+              {lang === "bn" ? "কোর্স কারিকুলাম ও সিলেবাস" : "Course Curriculum & Syllabus"}
+            </span>
+          </div> */}
           <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-tight">
-            {texts.curriculumTitle[lang]}<span className="text-[#00b89c]">.</span>
+            {texts.curriculumTitle?.[lang] || (lang === "bn" ? "কোর্সের বিস্তারিত কারিকুলাম" : "Detailed Course Curriculum")}
+            <span className="text-[#00b89c]">.</span>
           </h1>
           <p className="text-gray-500 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-            {texts.curriculumSubtitle[lang]}
+            {texts.curriculumSubtitle?.[lang] || (lang === "bn" ? "আমাদের একমাত্র সমন্বিত প্র্যাকটিক্যাল বয়লার ট্রেনিং কোর্সের সম্পূর্ণ সিলেবাস মডিউল নিচে দেওয়া হলো।" : "Complete syllabus modules of our single comprehensive practical boiler training course.")}
           </p>
         </motion.div>
       </section>
@@ -150,7 +153,7 @@ const Curriculam = () => {
                     {course.title[lang]}
                   </h3>
                   <div className="flex items-center gap-2 text-gray-400 text-xs font-bold mt-1 uppercase tracking-widest">
-                    <Clock size={14} className="text-[#00b89c]" /> {texts.duration[lang]}: {course.duration[lang]}
+                    <Clock size={14} className="text-[#00b89c]" /> {course.duration[lang]}
                   </div>
                 </div>
               </div>
@@ -164,7 +167,9 @@ const Curriculam = () => {
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.4 }}>
                   <div className="px-8 md:px-12 pb-10 ml-0 md:ml-14">
                     <div className="h-px w-full bg-gray-50 mb-8" />
-                    <h4 className="font-black text-sm uppercase tracking-widest text-[#00b89c] mb-6">{texts.learningModules[lang]}</h4>
+                    <h4 className="font-black text-sm uppercase tracking-widest text-[#00b89c] mb-6">
+                      {texts.learningModules?.[lang] || (lang === "bn" ? "মডিউল বিষয়সমূহ:" : "Module Topics:")}
+                    </h4>
                     <ul className="grid md:grid-cols-1 gap-4 mb-10">
                       {course.modules[lang].map((m, i) => (
                         <li key={i} className="flex items-start gap-3 group/item">
@@ -176,7 +181,9 @@ const Curriculam = () => {
                     <div className="bg-[#f8fafc] border border-gray-100 rounded-3xl p-6 flex items-start gap-4">
                       <Award className="text-[#00b89c] shrink-0" size={24} />
                       <div>
-                         <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">{texts.programOutcome[lang]}</p>
+                         <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-1">
+                           {texts.programOutcome?.[lang] || (lang === "bn" ? "শিক্ষণীয় অর্জন" : "Program Outcome")}
+                         </p>
                          <p className="font-bold text-[#0f172a] leading-tight">{course.outcome[lang]}</p>
                       </div>
                     </div>
@@ -202,16 +209,16 @@ const Curriculam = () => {
             <div className="relative z-10 text-center px-6 py-12">
               <BookOpen className="w-14 h-14 mx-auto mb-8 text-[#00b89c] bg-white p-3 rounded-2xl shadow-xl" />
               <h2 className="text-3xl md:text-5xl font-black mb-6 text-[#0f172a] leading-tight">
-                {texts.curriculumCtaTitle[lang]}
+                {texts.curriculumCtaTitle?.[lang] || (lang === "bn" ? "২য় ব্যাচে ভর্তির আবেদন করুন" : "Apply for Batch 2 Admission")}
               </h2>
               <p className="mb-10 text-gray-500 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                {texts.curriculumCtaSubtitle[lang]}
+                {texts.curriculumCtaSubtitle?.[lang] || (lang === "bn" ? "সেপ্টেম্বর ২০২৬-এর ২য় ব্যাচে আসন সংখ্যা সীমিত (মাত্র ৩৫টি)। এখনই যুক্ত হন।" : "Seats are limited (35 only) for Batch 2 starting September 2026.")}
               </p>
               <button
                 onClick={() => (window.location.href = "/training")}
                 className="group relative bg-[#00b89c] text-white px-12 py-5 rounded-[2rem] font-black text-lg overflow-hidden transition-all hover:bg-[#0f172a] hover:scale-105 shadow-xl shadow-[#00b89c]/30 active:scale-95 flex items-center gap-3 mx-auto"
               >
-                {texts.viewTrainingDetails[lang]}
+                {texts.viewTrainingDetails?.[lang] || (lang === "bn" ? "ট্রেনিং বিস্তারিত দেখুন" : "View Training Details")}
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

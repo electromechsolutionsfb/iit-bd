@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Phone, Mail, MapPin, Send, MessageSquare, Sparkles, Clock, ArrowRight, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageSquare, Sparkles, Clock, ArrowRight, ShieldCheck, Navigation } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../Context/LanguageContext";
 import { texts } from "/src/utils/text";
@@ -18,16 +18,23 @@ const Contact = () => {
   const handleWhatsAppSend = (e) => {
     e.preventDefault();
 
-    const myWhatsAppNumber = "8801919541752";
+    // 1. WhatsApp Number formatting (No '+', no spaces, no dashes)
+    const myWhatsAppNumber = "8801845772839"; 
     
-    // WhatsApp Message Template
-    const text = `*New Contact Inquiry*%0A--------------------------%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Message:* ${formData.message}`;
+    // 2. Structured WhatsApp Message Template
+    const rawText = `*New Contact Inquiry*\n--------------------------\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
     
-    const whatsappURL = `https://wa.me/${myWhatsAppNumber}?text=${text}`;
+    // 3. Properly URL Encode the text to prevent broken links
+    const encodedText = encodeURIComponent(rawText);
+    
+    // 4. Standard WhatsApp Web / App API Link
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${myWhatsAppNumber}&text=${encodedText}`;
     
     // Redirect to WhatsApp
     window.open(whatsappURL, "_blank");
   };
+
+  const googleMapsUrl = "https://www.google.com/maps/place/Institute+of+Industrial+Technology+(IIT)/@23.8687396,90.3663088,17z";
 
   return (
     <main className="bg-[#f8fafc] text-[#0f172a] min-h-screen pt-32 pb-20 selection:bg-[#00e1bf]/30">
@@ -42,10 +49,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="space-y-6"
         >
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-5 py-2 rounded-full shadow-sm">
             <Sparkles size={14} className="text-[#00b89c]" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Get in Touch</span>
-          </div>
+          </div> */}
           
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight text-[#0f172a]">
             {texts.contactTitle[lang]}
@@ -59,7 +66,7 @@ const Contact = () => {
       </section>
 
       {/* ===== INTERACTIVE INFO CARDS ===== */}
-      <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 mb-32">
+      <section className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 mb-24">
         {[
           { icon: <MapPin className="w-6 h-6" />, data: texts.contactCards.address, label: "Location" },
           { icon: <Phone className="w-6 h-6" />, data: texts.contactCards.phone, label: "Call Support" },
@@ -88,7 +95,7 @@ const Contact = () => {
       </section>
 
       {/* ===== FORM SECTION ===== */}
-      <section className="max-w-7xl mx-auto px-6 pb-32">
+      <section className="max-w-7xl mx-auto px-6 mb-24">
         <div className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,184,156,0.2)] flex items-center justify-center min-h-[700px]">
           
           <div className="absolute inset-0 z-0">
@@ -136,7 +143,7 @@ const Contact = () => {
                       className="w-full bg-white/80 border border-gray-100 px-6 py-4 rounded-2xl outline-none focus:border-[#00b89c] transition-all font-bold"
                     />
                   </div>
-                  {/* Email Address - Type Email */}
+                  {/* Email Address */}
                   <div className="space-y-2">
                     <label className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] ml-2">Email Address</label>
                     <input
@@ -150,7 +157,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Phone Number - Numbers Only */}
+                {/* Phone Number */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] ml-2">WhatsApp / Phone</label>
                   <input
@@ -178,7 +185,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     placeholder={texts.contactForm.message[lang]}
-                    className="w-full bg-white/80 border border-gray-100 px-6 py-4 rounded-2xl outline-none focus:border-[#00b89c] transition-all resize-none font-bold"
+                    className="w-full bg-[#ffffff]/80 border border-gray-100 px-6 py-4 rounded-2xl outline-none focus:border-[#00b89c] transition-all resize-none font-bold"
                   />
                 </div>
 
@@ -194,6 +201,58 @@ const Contact = () => {
 
           </div>
         </div>
+      </section>
+
+      {/* ===== GOOGLE MAP SECTION ===== */}
+      <section className="max-w-7xl mx-auto px-6 pb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white border border-gray-100 p-6 md:p-8 rounded-[3.5rem] shadow-xl space-y-6"
+        >
+          {/* Map Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-4">
+            <div>
+              <div className="inline-flex items-center gap-2 text-[#00b89c] font-black text-[10px] uppercase tracking-[0.2em] mb-1">
+                <MapPin size={14} />
+                <span>Locate Us</span>
+              </div>
+              <h3 className="text-2xl font-black text-[#0f172a]">
+                Institute of Industrial Technology (IIT)
+              </h3>
+              <p className="text-gray-500 text-sm font-medium mt-1">
+                V998+FGV, Dia Bari Rd, Dhaka 1230
+              </p>
+            </div>
+
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-[#0f172a] hover:bg-[#00b89c] text-white text-sm font-bold px-6 py-3.5 rounded-2xl transition-all shadow-md group whitespace-nowrap"
+            >
+              <span>Get Directions</span>
+              <Navigation size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            </a>
+          </div>
+
+          {/* Interactive Google Map iFrame */}
+          <div className="relative w-full h-[450px] rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-inner">
+            <iframe
+              title="IIT Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4026365406734!2d90.36373387602377!3d23.868744484530055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c30063a4bbdb%3A0xdd9fe8bef3723b9c!2sInstitute%20of%20Industrial%20Technology%20(IIT)!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        </motion.div>
       </section>
 
     </main>

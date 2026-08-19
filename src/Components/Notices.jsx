@@ -10,6 +10,7 @@ import {
   Clock, 
   ExternalLink 
 } from "lucide-react";
+
 // Your specific path
 import { noticesData } from "../utils/noticesData";
 
@@ -29,7 +30,7 @@ const Notices = () => {
           className="inline-flex items-center gap-2 bg-[#00b89c]/10 text-[#00b89c] px-4 py-2 rounded-full text-sm font-bold mb-6 border border-[#00b89c]/20"
         >
           <Megaphone size={16} />
-          Institutional Bulletin
+          ইন্সটিটিউশনাল বুলেটিন
         </motion.div>
 
         <motion.h1
@@ -38,7 +39,7 @@ const Notices = () => {
           transition={{ delay: 0.1 }}
           className="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-[#0f172a] to-[#00b89c] bg-clip-text text-transparent"
         >
-          Notice Board
+          নোটিশ বোর্ড
         </motion.h1>
 
         <motion.p 
@@ -47,7 +48,7 @@ const Notices = () => {
           transition={{ delay: 0.2 }}
           className="text-gray-500 text-xl max-w-2xl mx-auto font-medium"
         >
-          Keep track of important announcements, batch updates, and academic schedules from IIT.
+          আমাদের একমাত্র সমন্বিত বয়লার ট্রেনিং কোর্স, সেপ্টেম্বর ২০২৬-এর ২য় ব্যাচে ভর্তি ও একাডেমিক সিডিউল সংক্রান্ত সকল গুরুত্বপূর্ণ আপডেট।
         </motion.p>
       </section>
 
@@ -65,7 +66,7 @@ const Notices = () => {
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-4 mb-4">
                 <span className="bg-[#f1f5f9] text-[#0f172a] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-gray-200">
-                  {notice.tag || "General"}
+                  {notice.tag || "সাধারণ নোটিশ"}
                 </span>
                 <div className="flex items-center gap-2 text-gray-400 text-xs font-bold">
                   <Clock className="w-4 h-4 text-[#00b89c]" />
@@ -77,7 +78,7 @@ const Notices = () => {
                 {notice.title}
               </h3>
 
-              <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-4xl">
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed max-w-4xl line-clamp-2">
                 {notice.desc}
               </p>
             </div>
@@ -86,7 +87,7 @@ const Notices = () => {
               onClick={() => setActiveNotice(notice)}
               className="bg-[#0f172a] hover:bg-[#00b89c] text-white transition-all duration-300 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 shadow-lg shadow-gray-200 hover:shadow-[#00b89c]/30 group/btn"
             >
-              Details 
+              বিস্তারিত 
               <ChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </motion.div>
@@ -122,7 +123,7 @@ const Notices = () => {
                   <Info size={28} />
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 block mb-1">Notice Details</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 block mb-1">নোটিশের বিবরণ</span>
                   <span className="text-sm font-bold text-[#0f172a]">{activeNotice.date}</span>
                 </div>
               </div>
@@ -132,8 +133,8 @@ const Notices = () => {
               </h3>
 
               <div className="max-h-[40vh] overflow-y-auto pr-4 custom-scrollbar">
-                <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
-                  {activeNotice.details}
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed whitespace-pre-line">
+                  {activeNotice.details || activeNotice.desc}
                 </p>
               </div>
 
@@ -142,7 +143,7 @@ const Notices = () => {
                   onClick={() => setActiveNotice(null)}
                   className="bg-[#00b89c] text-white font-black px-10 py-4 rounded-2xl hover:shadow-xl hover:shadow-[#00b89c]/30 transition-all active:scale-95"
                 >
-                  Close Notice
+                  বন্ধ করুন
                 </button>
 
                 {/* ডাইনামিক পিডিএফ বাটন */}
@@ -153,7 +154,7 @@ const Notices = () => {
                     rel="noreferrer"
                     className="flex items-center gap-2 text-[#0f172a] font-black px-6 py-4 hover:bg-gray-50 rounded-2xl transition-all group"
                   >
-                    Download PDF <ExternalLink size={18} className="group-hover:translate-y-[-2px] group-hover:translate-x-[2px] transition-transform" />
+                    পিডিএফ ডাউনলোড <ExternalLink size={18} className="group-hover:translate-y-[-2px] group-hover:translate-x-[2px] transition-transform" />
                   </a>
                 )}
               </div>

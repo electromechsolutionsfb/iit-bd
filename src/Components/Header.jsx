@@ -159,7 +159,7 @@ const Header = () => {
               <div className="mt-auto space-y-4">
                 <div className="p-6 bg-gray-50 rounded-[2rem] border border-gray-100">
                   <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">Need Help?</p>
-                  <p className="text-[#0f172a] font-black">info@IITbd.com</p>
+                  <p className="text-[#0f172a] font-black">info@iitbd.com</p>
                 </div>
                 <Link
                   to="/admission"

@@ -43,7 +43,7 @@ const Footer = () => {
             />
             <ContactItem 
               icon={<Mail size={18} />} 
-              text="info@IITbd.com" 
+              text="info@iitbd.com" 
             />
             <ContactItem 
               icon={<MapPin size={18} />} 
@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="flex items-center gap-3 pt-4">
             <SocialIcon href="https://facebook.com" icon={<Facebook size={18} />} />
             <SocialIcon href="https://youtube.com" icon={<Youtube size={18} />} />
-            <SocialIcon href="https://wa.me/+8801919541752" icon={<MessageCircle size={18} />} />
+            <SocialIcon href="https://wa.me/++880 1845 772839" icon={<MessageCircle size={18} />} />
             <SocialIcon href="https://x.com" icon={<Twitter size={18} />} />
           </div>
         </div>

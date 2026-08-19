@@ -1,35 +1,24 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, User, Phone, BookOpen, CheckCircle, Sparkles, Send, ChevronDown, Loader2 } from "lucide-react";
-import { useLanguage } from "../Context/LanguageContext";
-import { texts } from "/src/utils/text";
-
-const courses = [
-  { en: "High-Pressure Boiler Operations", bn: "হাই-প্রেশার বয়লার অপারেশন" },
-  { en: "Industrial Boiler Maintenance", bn: "ইন্ডাস্ট্রিয়াল বয়লার মেইনটেন্যান্স" },
-  { en: "Thermal System & Energy Management", bn: "থার্মাল সিস্টেম ও এনার্জি ম্যানেজমেন্ট" },
-  { en: "Boiler Safety & Compliance Training", bn: "বয়লার সেফটি ও কমপ্লায়েন্স ট্রেনিং" },
-];
+import { X, User, Phone, CheckCircle, Sparkles, Send, Loader2 } from "lucide-react";
 
 const AdmissionFormModal = ({ open, onClose }) => {
-  const { lang } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState("");
   const [formData, setFormData] = useState({ name: "", phone: "" });
+
+  // সিলেবাস অনুযায়ী কোর্স নাম
+  const courseTitle = "বয়লার অপারেশন অ্যান্ড মেইনটেন্যান্স (গ্রেড-৩ লাইসেন্সি)";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!selectedCourse) return alert("Please select a course!");
-    
     setLoading(true);
 
     // WhatsApp Message Formatting
-    const whatsappNumber = "8801919541752"; 
-    const message = `*New Admission Request*%0A--------------------------%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Course:* ${selectedCourse}`;
+    const whatsappNumber = "8801845772839"; 
+    const message = `*নতুন ভর্তি আবেদন*%0A----------------------------------%0A*কোর্স:* ${courseTitle}%0A*নাম:* ${formData.name}%0A*ফোন:* ${formData.phone}`;
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-    // WhatsApp-এ মেসেজ পাঠানো
     window.open(whatsappURL, "_blank");
 
     setTimeout(() => {
@@ -39,7 +28,6 @@ const AdmissionFormModal = ({ open, onClose }) => {
         setSubmitted(false);
         onClose();
         setFormData({ name: "", phone: "" });
-        setSelectedCourse("");
       }, 4000);
     }, 1000);
   };
@@ -63,13 +51,16 @@ const AdmissionFormModal = ({ open, onClose }) => {
 
             {!submitted ? (
               <>
-                <div className="text-center mb-10 space-y-3">
-                  <div className="inline-flex items-center gap-2 bg-[#00b89c]/10 text-[#00b89c] px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-[#00b89c]/20">
-                    <Sparkles size={12} /> Secure Enrollment
+                <div className="text-center mb-8 space-y-3">
+                  <div className="inline-flex items-center gap-2 bg-[#00b89c]/10 text-[#00b89c] px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest border border-[#00b89c]/20">
+                    <Sparkles size={12} /> এডমিশন ফর্ম
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-black text-[#0f172a] leading-tight px-4">
-                    {texts.admissionTitle[lang]}<span className="text-[#00b89c]">.</span>
+                  <h3 className="text-2xl md:text-3xl font-black text-[#0f172a] leading-tight px-2">
+                    {courseTitle}
                   </h3>
+                  <p className="text-xs font-semibold text-gray-400">
+                    মেয়াদ: ১ মাস (১২০ ঘণ্টা)
+                  </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
@@ -81,14 +72,14 @@ const AdmissionFormModal = ({ open, onClose }) => {
                     <input
                       required
                       type="text"
-                      placeholder={texts.fullName[lang]}
+                      placeholder="আপনার সম্পূর্ণ নাম"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 pl-14 pr-6 font-bold text-[#0f172a] outline-none focus:bg-white focus:border-[#00b89c] transition-all"
                     />
                   </div>
 
-                  {/* Phone Input (Only Numbers Allowed) */}
+                  {/* Phone Input */}
                   <div className="relative group">
                     <div className="absolute left-6 top-1/2 -translate-y-1/2 text-[#00b89c] transition-transform group-focus-within:scale-110">
                       <Phone size={18} />
@@ -98,7 +89,7 @@ const AdmissionFormModal = ({ open, onClose }) => {
                       type="text"
                       inputMode="numeric"
                       pattern="[0-9]*"
-                      placeholder={texts.contactNumber[lang]}
+                      placeholder="মোবাইল নম্বর"
                       value={formData.phone}
                       onKeyDown={(e) => {
                         if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Tab' && e.key !== 'Enter' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
@@ -110,29 +101,6 @@ const AdmissionFormModal = ({ open, onClose }) => {
                     />
                   </div>
 
-                  {/* PRO COURSE SELECTOR */}
-                  <div className="relative group">
-                    <div className="absolute left-6 top-1/2 -translate-y-1/2 text-[#00b89c] z-10">
-                      <BookOpen size={18} />
-                    </div>
-                    <select
-                      required
-                      value={selectedCourse}
-                      onChange={(e) => setSelectedCourse(e.target.value)}
-                      className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 pl-14 pr-12 font-bold text-[#0f172a] outline-none focus:bg-white focus:border-[#00b89c] transition-all appearance-none cursor-pointer relative z-0"
-                    >
-                      <option value="" disabled>{lang === "bn" ? "কোর্স নির্বাচন করুন" : "Select Your Course"}</option>
-                      {courses.map((course, i) => (
-                        <option key={i} value={course[lang]} className="py-4 font-medium text-gray-700">
-                          {course[lang]}
-                        </option>
-                      ))}
-                    </select>
-                    <div className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none transition-transform group-focus-within:rotate-180">
-                      <ChevronDown size={18} />
-                    </div>
-                  </div>
-
                   <button
                     type="submit"
                     disabled={loading}
@@ -142,7 +110,7 @@ const AdmissionFormModal = ({ open, onClose }) => {
                       <Loader2 className="animate-spin" size={20} />
                     ) : (
                       <>
-                        {texts.submitApplication[lang]}
+                        আবেদন জমা দিন
                         <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </>
                     )}
@@ -158,14 +126,11 @@ const AdmissionFormModal = ({ open, onClose }) => {
                   <CheckCircle size={48} strokeWidth={2.5} />
                 </div>
                 <h4 className="text-3xl font-black text-[#0f172a] mb-4">
-                  {texts.applicationSuccess[lang]}
+                  আবেদন সফল হয়েছে!
                 </h4>
                 <p className="text-gray-500 font-medium px-6 leading-relaxed">
-                  {texts.applicationSuccessSub[lang]}
+                  আপনার তথ্য সফলভাবে গ্রহণ করা হয়েছে। খুব শীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।
                 </p>
-                <div className="mt-8 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
-                  Application Logged Successfully
-                </div>
               </motion.div>
             )}
           </motion.div>

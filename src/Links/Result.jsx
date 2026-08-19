@@ -72,10 +72,10 @@ const Result = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#00b89c]/10 rounded-full blur-[100px] -z-10" />
         
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-          <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
+          {/* <div className="inline-flex items-center gap-2 bg-white border border-gray-100 px-5 py-2 rounded-full shadow-sm">
             <ShieldCheck size={16} className="text-[#00b89c]" />
             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">Official Result Portal</span>
-          </div>
+          </div> */}
           
           <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
             Academic <span className="text-[#00b89c]">Results.</span>
