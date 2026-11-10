@@ -45,8 +45,8 @@ const noticesData = [
   {
     id: 1,
     date: "15 August 2026",
-    title: "২য় ব্যাচ এনরোলমেন্ট ও ওরিয়েন্টেশন নোটিশ",
-    details: "সেপ্টেম্বর ২০২৬ সেশনের ২য় ব্যাচের ওরিয়েন্টেশন ক্লাস অনুষ্ঠিত হবে। মোট ৩৫টি আসনের মধ্যে সীমিত কিছু আসন খালি রয়েছে।"
+    title: "এনরোলমেন্ট ও ওরিয়েন্টেশন নোটিশ",
+    details: "আমাদের মোট ৩৫টি আসন মাত্র, তাই দ্রুত আবেদন করুন।"
   },
   {
     id: 2,
@@ -57,8 +57,8 @@ const noticesData = [
   {
     id: 3,
     date: "01 August 2026",
-    title: "১ম ব্যাচের সফল প্র্যাকটিক্যাল ল্যাব সম্পন্ন",
-    details: "ইন-হাউস বয়লার প্ল্যান্টে ১ম ব্যাচের শিক্ষার্থীদের সফলভাবে ৬০ ঘণ্টার প্র্যাকটিক্যাল ল্যাব সম্পন্ন হয়েছে।"
+    title: "সকল ব্যাচেই সফল প্র্যাকটিক্যাল ল্যাব সম্পন্ন করা হয়",
+    details: "ইন-হাউস বয়লার প্ল্যান্টে প্রতি ব্যাচের শিক্ষার্থীদের সফলভাবে ৬০ ঘণ্টার প্র্যাকটিক্যাল ল্যাব সম্পন্ন হয়।"
   }
 ];
 
@@ -166,9 +166,9 @@ const faqs = [
     }
   },
   {
-    q: { en: "২য় ব্যাচে ভর্তির নিয়ম কি?"},
+    q: { en: "ভর্তির নিয়ম কি?"},
     a: {
-      en: "২য় ব্যাচে মাত্র ৩৫টি আসন রয়েছে। সেপ্টেম্বর ২০২৬ সেশনের জন্য ওয়েবসাইট থেকে অনলাইন ফরম পূরণ করে আসন বুক করা যাবে।"
+      en: "আমাদের মাত্র ৩৫টি আসন রয়েছে। সেপ্টেম্বর ২০২৬ সেশন থেকে ওয়েবসাইট থেকেই অনলাইন ফরম পূরণ করে আসন বুক করা যাবে।"
     }
   }
 ];
@@ -201,8 +201,8 @@ const Home = () => {
             </span>
             <p className="font-semibold text-gray-200">
               {lang === "en"
-                ? "২য় ব্যাচে ভর্তি চলছে! সেপ্টেম্বর ২০২৬ সেশন | সিট সংখ্যা সীমিত (মাত্র ৩৫টি)"
-                : "Batch 2 Enrollment Open! September 2026 Session | Strictly 35 Seats Only"}
+                ? "ভর্তি চলছে! সিট সংখ্যা সীমিত (মাত্র ৩৫টি)"
+                : "Strictly 35 Seats Only"}
             </p>
           </div>
           <Link
@@ -230,8 +230,8 @@ const Home = () => {
               <Sparkles size={16} className="animate-spin" style={{ animationDuration: "6s" }} />
               <span>
                 {lang === "en"
-                  ? "১ম ব্যাচ সফলতার পর ২য় ব্যাচে ভর্তি চলছে"
-                  : "Batch 1 Completed Successfully | Batch 2 Open"}
+                  ? "প্রতি ব্যাচই সফলতার সাথে শেষ করা হয়"
+                  : "Completed Successfully"}
               </span>
             </div>
 
@@ -286,7 +286,7 @@ const Home = () => {
                 to="/admission"
                 className="group inline-flex items-center gap-2.5 bg-[#00b89c] hover:bg-[#00a38a] text-white px-7 py-4 rounded-2xl font-black text-sm md:text-base transition-all shadow-lg shadow-[#00b89c]/25 hover:scale-[1.02]"
               >
-                {lang === "en" ? "২য় ব্যাচে ভর্তি আবেদন করুন" : "Apply For Batch 2"}
+                {lang === "en" ? "ভর্তি আবেদন করুন" : "Apply"}
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
 
