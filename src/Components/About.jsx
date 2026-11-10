@@ -141,8 +141,8 @@ const About = () => {
 
       {/* ===== ENROLLMENT CTA ===== */}
       <section className="max-w-4xl mx-auto px-6 text-center pt-8">
-        <h2 className="text-3xl font-black text-[#0f172a] mb-3">২য় ব্যাচে আপনার সিট নিশ্চিত করুন</h2>
-        <p className="text-gray-500 font-medium mb-8">সেপ্টেম্বর থেকে নতুন ব্যাচের ক্লাস শুরু হতে যাচ্ছে। প্রতি ব্যাচে আসন সংখ্যা মাত্র ৩৫টি।</p>
+        <h2 className="text-3xl font-black text-[#0f172a] mb-3">আজকেই আপনার সিট নিশ্চিত করুন</h2>
+        <p className="text-gray-500 font-medium mb-8">নতুন ব্যাচের ক্লাস শুরু হতে যাচ্ছে। প্রতি ব্যাচে আসন সংখ্যা মাত্র ৩৫টি।</p>
         <Link to="/admission" className="inline-flex items-center gap-3 bg-[#00b89c] text-white px-10 py-4 rounded-2xl font-black text-lg hover:scale-105 transition-all shadow-lg shadow-[#00b89c]/30">
           এখনই ভর্তি হন <ArrowRight size={20} />
         </Link>
